@@ -6,10 +6,10 @@ export const Timer = ({ initialTime, setIsFinish }) => {
   time.setSeconds(time.getSeconds() + initialTime);
   const [countTime, setCountTime] = useState("timerHigh");
 
-  const { seconds, minutes, isRunning, start } = useTimer({
+  const { seconds, minutes } = useTimer({
     expiryTimestamp: time,
     onExpire: () => console.warn("onExpire called"),
-    autoStart: false,
+    autoStart: true, //trueの場合タイマーをは自動でスタート、falseの場合はボタンを押してスタート
   });
 
   const updateCountTime = useCallback(() => {
@@ -21,7 +21,7 @@ export const Timer = ({ initialTime, setIsFinish }) => {
       setCountTime("timerHigh");
     }
     if (minutes <= 0 && seconds <= 0) {
-      setIsFinish(1);
+      setIsFinish(true);
     }
   }, [minutes, seconds, setIsFinish]);
 
@@ -49,7 +49,6 @@ export const Timer = ({ initialTime, setIsFinish }) => {
 
   return (
     <div>
-      <div>{isRunning ? "running" : "Not running"}</div>
       <div
         style={{
           ...timerStyles[countTime],
@@ -67,13 +66,6 @@ export const Timer = ({ initialTime, setIsFinish }) => {
           <span>{minutes}</span>:
           <span>{seconds < 10 ? "0" + seconds : "" + seconds}</span>
         </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        <button onClick={start}>start</button>
       </div>
     </div>
   );

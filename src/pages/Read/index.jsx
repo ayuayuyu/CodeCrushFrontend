@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Timer } from "../../components/Timer";
 
 export const Read = () => {
-  const [isFinish, serIsFinish] = useState(0);
+  const [isFinish, serIsFinish] = useState(false);
   return (
     <>
-      <Timer setIsFinish={serIsFinish} initialTime={62} />
-      <p>{isFinish}</p>
+      <Timer setIsFinish={serIsFinish} initialTime={300} />
+      <p>{isFinish ? "true" : "false"}</p>
     </>
   );
 };
