@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTimer } from "react-timer-hook";
 
-export const Timer = ({ expiryTimestamp, setIsFinish }) => {
+export const Timer = ({ initialTime, setIsFinish }) => {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + initialTime);
   const [countTime, setCountTime] = useState("timerHigh");
 
   const { seconds, minutes, isRunning, start } = useTimer({
-    expiryTimestamp,
+    expiryTimestamp: time,
     onExpire: () => console.warn("onExpire called"),
     autoStart: false,
   });
