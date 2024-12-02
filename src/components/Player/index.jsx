@@ -20,58 +20,35 @@ export const Player = (props) => {
 
   const CheckPattern = ({ value }) => {
     console.log(value, typeof value);
+
+    let message = "";
     switch (value) {
       case 0:
-        return (
-          <p
-            style={{
-              margin: "0 auto",
-            }}
-          >
-            相手のコード
-          </p>
-        );
+        message = "自分のコード";
+        break;
       case 1:
-        return (
-          <p
-            style={{
-              margin: "0 auto",
-            }}
-          >
-            自分のコード
-          </p>
-        );
+        message = "相手のコード";
+        break;
       case 2:
-        return (
-          <p
-            style={{
-              margin: "0 auto",
-            }}
-          >
-            お題コード
-          </p>
-        );
+        message = "お題コード";
+        break;
       case 3:
-        return (
-          <p
-            style={{
-              margin: "0 auto",
-            }}
-          >
-            答え
-          </p>
-        );
+        message = "答え";
+        break;
       default:
-        return (
-          <p
-            style={{
-              margin: "0 auto",
-            }}
-          >
-            値が間違い
-          </p>
-        );
+        message = "不正な値";
+        break;
     }
+
+    return (
+      <p
+        style={{
+          margin: "0 auto",
+        }}
+      >
+        {message}
+      </p>
+    );
   };
 
   return (
