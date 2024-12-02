@@ -1,15 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTimer } from "react-timer-hook";
 
-export const Timer = ({ expiryTimestamp }) => {
+export const Timer = ({ expiryTimestamp, setIsFinish }) => {
   const [countTime, setCountTime] = useState("timerHigh");
 
-  const { seconds, minutes, isRunning, start, pause, resume, restart } =
-    useTimer({
-      expiryTimestamp,
-      onExpire: () => console.warn("onExpire called"),
-      autoStart: false,
-    });
+  const { seconds, minutes, isRunning, start } = useTimer({
+    expiryTimestamp,
+    onExpire: () => console.warn("onExpire called"),
+    autoStart: false,
+  });
 
   const updateCountTime = useCallback(() => {
     if (minutes < 1 && seconds < 20) {
@@ -19,7 +18,10 @@ export const Timer = ({ expiryTimestamp }) => {
     } else {
       setCountTime("timerHigh");
     }
-  }, [minutes, seconds]);
+    if (minutes <= 0 && seconds <= 0) {
+      setIsFinish(1);
+    }
+  }, [minutes, seconds, setIsFinish]);
 
   useEffect(() => {
     updateCountTime();
@@ -70,9 +72,6 @@ export const Timer = ({ expiryTimestamp }) => {
         }}
       >
         <button onClick={start}>start</button>
-        <button onClick={pause}>pause</button>
-        <button onClick={resume}>resume</button>
-        <button onClick={restart}>restart</button>
       </div>
     </div>
   );

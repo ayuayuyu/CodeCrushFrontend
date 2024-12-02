@@ -10,6 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Link to="/">Home</Link>
+        <Link to="/read">Read</Link>
         <Routes>
           <Route path="/" element={<Title />} />
           <Route path="/answer" element={<Answer />} />
