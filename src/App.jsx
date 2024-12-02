@@ -15,7 +15,7 @@ function App() {
           <Route path="/answer" element={<Answer />} />
           <Route path="/delete" element={<Delete />} />
           <Route path="/fix" element={<Fix />} />
-          <Route path="/fead" element={<Read />} />
+          <Route path="/read" element={<Read />} />
           <Route path="*" element={<h1>Not Found Page</h1>} />
         </Routes>
       </BrowserRouter>

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
 export const Code = () => {
@@ -10,6 +10,23 @@ export const Code = () => {
     setCode(code);
   }, []);
 
+  // ファイルからコードを取得してコードエディタ上に表示させる
+  useEffect(() => {
+    fetch("/exercise01.c")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("ファイルの読み込みに失敗しました");
+        }
+        return response.text();
+      })
+      .then((text) => {
+        setCode(text);
+      })
+      .catch((error) => {
+        console.error("エラー:", error);
+      });
+  }, []);
+
   return (
     <ReactCodeMirror
       value={code}
@@ -18,17 +35,18 @@ export const Code = () => {
         cppLanguage,
         EditorView.theme({
           ".cm-scroller": {
-            minHeight: "344px",
+            minHeight: "45vh",
           },
         }),
       ]}
       readOnly={canEdit} //編集可否の設定(true:可能,false:不可能)
       style={{
-        width: "800px",
-        height: "344px",
+        width: "65%",
+        height: "45vh",
         overflowY: "auto",
-        fontSize: "16px",
+        fontSize: "1rem",
         color: "black",
+        border: "none",
       }}
     />
   );
