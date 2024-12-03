@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
-import { MemoContext } from "./../../contexts/MemoContext";
+import { MemoContext } from "./../../contexts/MemoContext"; // メモの状態管理を行うためのContext
 
 export const Memo = () => {
   const { memoContents, setMemoContents } = useContext(MemoContext);
 
+  // 初回レンダリング時にlocalStorageから保存されたメモを読み込み
   useEffect(() => {
     const savedMemo = localStorage.getItem("memoContents");
     if (savedMemo) {
