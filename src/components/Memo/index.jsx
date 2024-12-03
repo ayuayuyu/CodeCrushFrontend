@@ -1,8 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MemoContext } from "./../../contexts/MemoContext";
 
 export const Memo = () => {
   const { memoContents, setMemoContents } = useContext(MemoContext);
+
+  useEffect(() => {
+    const savedMemo = localStorage.getItem("memoContents");
+    if (savedMemo) {
+      setMemoContents(savedMemo);
+    }
+  }, [setMemoContents]);
+
+  const handleChange = (e) => {
+    const newMemo = e.target.value;
+    localStorage.setItem("memoContents", newMemo);
+    setMemoContents(newMemo);
+  };
 
   return (
     <div style={{ boxShadow: "0 0 10px #00000010", borderRadius: "30px" }}>
@@ -41,9 +54,7 @@ export const Memo = () => {
           outline: "none",
         }}
         value={memoContents}
-        onChange={(e) => {
-          setMemoContents(e.target.value);
-        }}
+        onChange={handleChange}
       ></textarea>
     </div>
   );
