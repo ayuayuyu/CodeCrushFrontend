@@ -1,21 +1,21 @@
 import { Icon } from "@iconify/react";
-export const Book = () => {
+export const Create = () => {
   return (
     <>
       <div
         style={{
           borderRadius: "12px",
-          color: "#FFC80B",
-          border: "solid 3px #FFC80B",
+          color: "#2ADA6E",
+          border: "solid 3px #2ADA6E",
           width: "48px",
           height: "48px",
-          background: "#FFF6D6",
+          background: "#E8FDE7",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Icon icon="heroicons:book-open" height="26px" />
+        <Icon icon="heroicons:pencil" height="26px" />
       </div>
     </>
   );
