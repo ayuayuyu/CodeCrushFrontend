@@ -1,5 +1,11 @@
+import { useEffect, useState } from "react";
+
 //outputArray(出力を"\n"で区切った配列)を引数として受け取る
 export const Output = ({ outputArray }) => {
+  const [output, setOutput] = useState([" "]);
+  useEffect(() => {
+    setOutput(outputArray);
+  }, [outputArray]);
   return (
     <>
       <div
@@ -34,18 +40,15 @@ export const Output = ({ outputArray }) => {
               color: "#5A6977",
             }}
           >
-            {outputArray.map((element, index) => {
-              return (
-                <p
-                  key={index}
-                  style={{
-                    margin: 0,
-                  }}
-                >
+            {output && output.length > 0 ? (
+              output.map((element, index) => (
+                <p key={index} style={{ margin: 0 }}>
                   {element}
                 </p>
-              );
-            })}
+              ))
+            ) : (
+              <p></p>
+            )}
           </div>
         </div>
       </div>
