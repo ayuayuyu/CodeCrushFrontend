@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const MenuList = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isHover, setIsHover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); //メニューが開いているかどうか
+  const [isHover, setIsHover] = useState(false); //ホバーしているかどうか
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
@@ -27,6 +27,7 @@ export const MenuList = () => {
         gap: "12px",
       }}
     >
+      {/* メニューボタン */}
       <button
         onClick={handleClick}
         style={{
@@ -98,6 +99,8 @@ export const MenuList = () => {
           ></div>
         </div>
       </button>
+
+      {/* ゲームを終わるボタン */}
       <Link
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
