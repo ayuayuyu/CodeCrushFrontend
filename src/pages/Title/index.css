@@ -1,0 +1,36 @@
+.title-container {
+  width: 98vw;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.logo {
+  width: 130px;
+  height: 92px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #2a3034;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #6e757a;
+}
