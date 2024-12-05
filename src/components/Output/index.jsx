@@ -1,5 +1,5 @@
 //outputArray(出力を"\n"で区切った配列)を引数として受け取る
-export const Output = (outputArray) => {
+export const Output = ({ outputArray }) => {
   return (
     <>
       <div
@@ -34,7 +34,7 @@ export const Output = (outputArray) => {
               color: "#5A6977",
             }}
           >
-            {outputArray.outputArray.map((element, index) => {
+            {outputArray.map((element, index) => {
               return (
                 <p
                   key={index}
