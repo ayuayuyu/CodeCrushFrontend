@@ -1,0 +1,19 @@
+.runDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8125rem;
+  height: 1.8125rem;
+  /* border: 0.1875rem solid #ff9f40; */
+  border-radius: 1.875rem;
+  background-color: #ffe0c2;
+}
+
+.runIcon {
+  color: #ff9f40;
+  padding-left: 0.0625rem;
+
+  :active {
+    color: #f58b22;
+  }
+}
