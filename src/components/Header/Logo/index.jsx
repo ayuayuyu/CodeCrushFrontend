@@ -8,6 +8,7 @@ export const Logo = () => {
         width: "fit-content",
         height: "fit-content",
         padding: "5px 24px 0px 24px",
+        left: "0",
       }}
     >
       <img src="/CodeCrushLogo.svg" alt="Example" />
