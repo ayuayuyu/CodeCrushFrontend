@@ -10,7 +10,7 @@ export const Logo = () => {
         padding: "5px 24px 0px 24px",
       }}
     >
-      <img src="/CodeClashLogo.svg" alt="Example" />
+      <img src="/CodeCrashLogo.svg" alt="Example" />
     </div>
   );
 };
