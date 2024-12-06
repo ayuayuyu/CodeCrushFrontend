@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Sidebar } from "../../components/Sidebar";
+import { Main } from "../../components/Main";
 import "./index.css";
 
 export const Read = () => {
@@ -16,6 +17,7 @@ export const Read = () => {
         }}
       >
         <Sidebar setIsFinish={setIsFinish} />
+        <Main />
       </div>
     </>
   );
