@@ -1,7 +1,16 @@
 export const Logo = () => {
   return (
-    <div>
-      <div>fkjaldf</div>
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        border: "3px solid #DBE2E7",
+        borderRadius: "24px",
+        width: "fit-content",
+        height: "fit-content",
+        padding: "4px 24px -1px 24px",
+      }}
+    >
+      <img src="/CodeClashLogo.svg" alt="Example" />
     </div>
   );
 };
