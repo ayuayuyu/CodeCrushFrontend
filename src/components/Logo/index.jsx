@@ -7,7 +7,7 @@ export const Logo = () => {
         borderRadius: "24px",
         width: "fit-content",
         height: "fit-content",
-        padding: "4px 24px -1px 24px",
+        padding: "5px 24px 0px 24px",
       }}
     >
       <img src="/CodeClashLogo.svg" alt="Example" />
