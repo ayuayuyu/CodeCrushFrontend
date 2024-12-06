@@ -1,14 +1,22 @@
 import { useState } from "react";
-import { Timer } from "../../components/Timer";
-import { Memo } from "../../components/Memo";
+import { Sidebar } from "../../components/Sidebar";
+import "./index.css";
 
 export const Read = () => {
-  const [isFinish, serIsFinish] = useState(false);
+  const [isFinish, setIsFinish] = useState(false);
+
   return (
     <>
-      <Timer setIsFinish={serIsFinish} initialTime={61} />
-      <p>{isFinish ? "true" : "false"}</p>
-      <Memo />
+      <div
+        style={{
+          paddingTop: "100px",
+          height: "90%",
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Sidebar setIsFinish={setIsFinish} />
+      </div>
     </>
   );
 };

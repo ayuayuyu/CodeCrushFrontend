@@ -9,12 +9,12 @@ import { MemoProvider } from "./contexts/MemoContext";
 import { Header } from "./components/Header";
 function App() {
   return (
-    <>
+    <div className="screen">
       <BrowserRouter>
         <Header />
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link>
         <Link to="/read">Read</Link>
-        <Link to="/fix">Fix</Link>
+        <Link to="/fix">Fix</Link> */}
         <MemoProvider>
           <Routes>
             <Route path="/" element={<Title />} />
@@ -26,7 +26,7 @@ function App() {
           </Routes>
         </MemoProvider>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
