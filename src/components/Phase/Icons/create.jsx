@@ -1,21 +1,12 @@
 import { Icon } from "@iconify/react";
-export const Create = () => {
+import "../Icons/Create.css";
+import { useEffect, useState } from "react";
+
+export const Create = ({ isState }) => {
   return (
     <>
-      <div
-        style={{
-          borderRadius: "12px",
-          color: "#2ADA6E",
-          border: "solid 3px #2ADA6E",
-          width: "48px",
-          height: "48px",
-          background: "#E8FDE7",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Icon icon="heroicons:pencil" height="26px" />
+      <div className={isState ? "highlighted" : "default"}>
+        <Icon icon="heroicons:pencil-solid" height="26px" />
       </div>
     </>
   );

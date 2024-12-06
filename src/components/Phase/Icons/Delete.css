@@ -1,0 +1,22 @@
+.highlighted {
+  border-radius: 12px; /* セミコロンが必要 */
+  border: 3px solid #e54671; /* border-solidは無効なプロパティ */
+  color: #e54671;
+  width: 48px;
+  height: 48px;
+  background: #ffe3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* alignItemsは無効。align-itemsが正しい */
+}
+.default {
+  border-radius: 12px; /* セミコロンが必要 */
+  border: 3px solid #c7d2db; /* border-solidは無効なプロパティ */
+  color: #c7d2db;
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* alignItemsは無効。align-itemsが正しい */
+}
