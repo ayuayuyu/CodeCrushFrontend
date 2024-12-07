@@ -39,7 +39,7 @@ export const Fix = () => {
           {showSidebar && (
             <div className="layout-main">
               <Sidebar setIsFinish={setIsFinish} />
-              <Main />
+              <Main editFlag={true} />
             </div>
           )}
         </div>

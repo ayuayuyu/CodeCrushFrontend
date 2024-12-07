@@ -8,7 +8,7 @@ import "./index.css";
 import { CodeDocument } from "../CodeDocument/Docment";
 import { CodeContext } from "../../contexts/CodeContext";
 
-export const Main = () => {
+export const Main = ({ editFlag }) => {
   const { code, setCode } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
@@ -31,7 +31,7 @@ export const Main = () => {
               backgroundColor: "#DBE2E7",
             }}
           />
-          <Code code={code} setCode={setCode} />
+          <Code canEdit={editFlag} />
         </div>
         {isDocumentOpen ? <CodeDocument /> : <div />}
       </div>
