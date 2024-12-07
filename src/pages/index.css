@@ -1,0 +1,20 @@
+.layout {
+  padding-top: 80px;
+  height: 85vh;
+}
+
+.layout-main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 46px;
+  margin-right: 46px;
+  background-color: #f3f5f6;
+}
+
+.layout-inputform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

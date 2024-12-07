@@ -1,0 +1,11 @@
+.center {
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  height: 100%; /* コンテナの高さを指定 */
+  width: 100%;
+  text-align: center; /* テキストの整列（必要に応じて） */
+}
+.font {
+  font-size: 3.5rem;
+}
