@@ -34,6 +34,7 @@ export const Main = ({ editFlag, phase }) => {
           display: "flex",
           gap: isDocumentOpen ? "20px" : 0,
           height: "55vh",
+          justifyContent: "space-between",
         }}
       >
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
