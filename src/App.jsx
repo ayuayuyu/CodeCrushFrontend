@@ -7,6 +7,7 @@ import { Read } from "./pages/Read/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MemoProvider } from "./contexts/MemoContext";
 import { CodeProvider } from "./contexts/CodeContext";
+import { Matching } from "./pages/Matching/index";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <MemoProvider>
             <Routes>
               <Route path="/" element={<Title />} />
+              <Route path="match" element={<Matching />} />
               <Route path="answer" element={<Answer />} />
               <Route path="delete" element={<Delete />} />
               <Route path="fix" element={<Fix />} />

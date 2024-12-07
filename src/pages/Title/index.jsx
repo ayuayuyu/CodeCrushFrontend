@@ -6,7 +6,7 @@ export const Title = () => {
 
   return (
     <>
-      <div className="title-container" onClick={() => navigate("/read")}>
+      <div className="title-container" onClick={() => navigate("/match")}>
         <div className="titleBox">
           <img
             src="/CodeCrushLogo.svg"
