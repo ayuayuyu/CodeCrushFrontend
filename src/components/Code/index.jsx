@@ -3,7 +3,7 @@ import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
 import { CodeContext } from "../../contexts/CodeContext";
 
-export const Code = ({ code, setCode }) => {
+export const Code = () => {
   //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
   const { code, setCode } = useContext(CodeContext);

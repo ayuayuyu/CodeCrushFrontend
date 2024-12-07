@@ -8,9 +8,8 @@ import "./index.css";
 import { CodeDocument } from "../CodeDocument/Docment";
 import { CodeContext } from "../../contexts/CodeContext";
 
-
 export const Main = () => {
-  const { code } = useContext(CodeContext);
+  const { code, setCode } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
 
