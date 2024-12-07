@@ -6,18 +6,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../index.css";
 import SendCrushCode from "../../components/Http/SendCrushCode";
 import { CodeContext } from "../../contexts/CodeContext";
+import { RoomIdContext } from "../../contexts/RoomId";
+import { PlayerContext } from "../../contexts/Player";
 
 export const Delete = () => {
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const { code } = useContext(CodeContext);
+  const { roomId } = useContext(RoomIdContext);
+  const { player } = useContext(PlayerContext);
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
-
-  //以下コードはテスト用に作ります,
-  const roomId = "12345";
-  const player = "player1";
-  //ここまでです。
 
   useEffect(() => {
     if (isFinish) {

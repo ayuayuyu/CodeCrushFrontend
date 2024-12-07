@@ -12,7 +12,7 @@ export const Read = () => {
 
   useEffect(() => {
     if (isFinish) {
-      navigate("/match");
+      navigate("/delete");
     }
   }, [isFinish, navigate]);
 

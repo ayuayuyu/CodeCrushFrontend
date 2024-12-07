@@ -1,11 +1,24 @@
-import { useState } from "react";
 import "../InputForm/index.css";
+import { RoomIdContext } from "../../contexts/RoomId";
+import { PlayerContext } from "../../contexts/Player";
 import { Player } from "../Player";
-export const InputForm = () => {
-  const [roomId, setRoomId] = useState("");
-  const [player, setPlayer] = useState("");
-  console.log(player);
+import { useContext } from "react";
+export const InputForm = ({ setIsFinish }) => {
+  //roomIdを入力
+  const { roomId, setRoomId } = useContext(RoomIdContext);
+  //playerの入力
+  const { setPlayer } = useContext(PlayerContext);
 
+  //roomIdをセットする
+  const handleRoomIdChange = (e) => {
+    setRoomId(e.target.value);
+  };
+  //playerと判定の入力
+  const handleSubmit = (players) => {
+    setPlayer(players);
+    //playerの入力の終了
+    setIsFinish(true);
+  };
   return (
     <div className="input-box">
       <div className="title">プレイヤーマッチング</div>
@@ -20,7 +33,7 @@ export const InputForm = () => {
             className="input-pass-box"
             type="text"
             value={roomId}
-            onChange={(value) => setRoomId(value.target.value)}
+            onChange={handleRoomIdChange}
             placeholder="あいことばを入力"
           />
         </div>
@@ -31,7 +44,7 @@ export const InputForm = () => {
               className={`button-player ${
                 player === "player1" ? "active" : ""
               }`}
-              onClick={() => setPlayer("player1")}
+              onClick={() => handleSubmit("player1")}
             >
               プレイヤー１
             </button>
@@ -39,7 +52,7 @@ export const InputForm = () => {
               className={`button-player ${
                 player === "player2" ? "active" : ""
               }`}
-              onClick={() => setPlayer("player2")}
+              onClick={() => handleSubmit("player2")}
             >
               プレイヤー２
             </button>
