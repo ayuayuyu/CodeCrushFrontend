@@ -10,6 +10,7 @@ import { CodeContext } from "../../contexts/CodeContext";
 import { PlayerContext } from "../../contexts/Player";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { CheckPlayer } from "../../components/Http/CheckPlayer";
+import { SendStatus } from "../../components/Http/SendStatus";
 export const Matching = () => {
   const { code, setCode } = useContext(CodeContext);
   const { roomId } = useContext(RoomIdContext);
@@ -17,6 +18,7 @@ export const Matching = () => {
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const [isPlayer, setIsPlayer] = useState(false);
+  const sendStatus = "read";
 
   // ファイルからコードを取得してコードエディタ上に表示させる
   useEffect(() => {
@@ -47,6 +49,7 @@ export const Matching = () => {
     //変更前のコードをhttp通信で送るコンポーネント
     if (isPlayer) {
       SendDefalutCode({ roomId, code });
+      SendStatus({ roomId, player, sendStatus });
       navigate(`/read`);
     }
   }, [isPlayer]);

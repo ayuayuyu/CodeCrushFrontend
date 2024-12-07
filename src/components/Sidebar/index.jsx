@@ -19,7 +19,7 @@ export const Sidebar = ({ setIsFinish }) => {
           alignContent: "center",
         }}
       >
-        <Timer setIsFinish={setIsFinish} initialTime={1000} />
+        <Timer setIsFinish={setIsFinish} initialTime={10} />
       </div>
       <Memo />
     </div>

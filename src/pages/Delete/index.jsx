@@ -8,6 +8,7 @@ import { SendDeleteCode } from "../../components/Http/SendDeleteCode";
 import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { PlayerContext } from "../../contexts/Player";
+import { SendStatus } from "../../components/Http/SendStatus";
 
 export const Delete = () => {
   const navigate = useNavigate();
@@ -17,11 +18,13 @@ export const Delete = () => {
   const { player } = useContext(PlayerContext);
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
+  const sendStatus = "answer";
 
   useEffect(() => {
     if (isFinish) {
       //編集したコードを送るhttp通信のコンポーネント
       SendDeleteCode({ code, roomId, player });
+      SendStatus({ roomId, player, sendStatus });
       navigate("/fix");
     }
   }, [isFinish, navigate]);
