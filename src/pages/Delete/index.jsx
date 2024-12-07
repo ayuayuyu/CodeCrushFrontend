@@ -35,11 +35,7 @@ export const Delete = () => {
       <Header />
       {showSidebar && (
         <div className="layout-main">
-          <Sidebar
-            setIsFinish={setIsFinish}
-            initialTime={180}
-            phase={pageState}
-          />
+          <Sidebar setIsFinish={setIsFinish} phase={pageState} />
           <Main editFlag={true} phase={pageState} />
         </div>
       )}

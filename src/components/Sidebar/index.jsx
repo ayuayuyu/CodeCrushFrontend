@@ -2,7 +2,7 @@ import { Timer } from "../Timer/index";
 import { Memo } from "../Memo/index";
 import { Phase } from "../Phase/index";
 
-export const Sidebar = ({ setIsFinish, initialTime, phase }) => {
+export const Sidebar = ({ setIsFinish, phase }) => {
   return (
     <div
       style={{
@@ -19,7 +19,7 @@ export const Sidebar = ({ setIsFinish, initialTime, phase }) => {
           alignContent: "center",
         }}
       >
-        <Timer setIsFinish={setIsFinish} initialTime={initialTime} />
+        <Timer setIsFinish={setIsFinish} phase={phase} />
       </div>
       <Memo />
     </div>

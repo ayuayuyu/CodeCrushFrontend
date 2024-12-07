@@ -22,11 +22,7 @@ export const Read = () => {
       <Header />
       {showSidebar && (
         <div className="layout-main">
-          <Sidebar
-            setIsFinish={setIsFinish}
-            initialTime={180}
-            phase={pageState}
-          />
+          <Sidebar setIsFinish={setIsFinish} phase={pageState} />
           <Main editFlag={false} phase={pageState} />
         </div>
       )}
