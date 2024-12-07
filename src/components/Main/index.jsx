@@ -19,7 +19,7 @@ export const Main = () => {
         style={{
           display: "flex",
           gap: isDocumentOpen ? "20px" : 0,
-          height: "100%",
+          height: "55vh",
         }}
       >
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
