@@ -16,6 +16,7 @@ export const MenuList = () => {
   return (
     <div
       style={{
+        backgroundColor: "#ffffff",
         border: "3px solid #DBE2E7",
         borderRadius: "24px",
         width: "fit-content",
@@ -25,6 +26,7 @@ export const MenuList = () => {
         display: "flex",
         flexDirection: "column",
         gap: "12px",
+        right: "0",
       }}
     >
       {/* メニューボタン */}
@@ -111,7 +113,7 @@ export const MenuList = () => {
           borderRadius: "24px",
           border: "none",
           color: isHover ? "#EF6D90" : "#E54671",
-          display: "Block",
+          display: "block",
           textDecoration: "none",
           marginTop: isOpen ? "0px" : "-36px",
           opacity: isOpen ? "100%" : "0%",

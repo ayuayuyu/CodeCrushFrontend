@@ -1,7 +1,5 @@
 import "./index.css";
 import { useNavigate } from "react-router-dom";
-import { Logo } from "../../components/Logo";
-import { MenuList } from "../../components/MenuList";
 
 export const Title = () => {
   const navigate = useNavigate();
@@ -22,10 +20,6 @@ export const Title = () => {
         <p className="subtitle">read & create</p>
       </div>
       <p>Title</p>
-      <div style={{ display: "flex", gap: 20 }}>
-        <Logo />
-        <MenuList />
-      </div>
     </>
   );
 };

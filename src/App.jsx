@@ -6,10 +6,12 @@ import { Fix } from "./pages/Fix/index";
 import { Read } from "./pages/Read/index";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { MemoProvider } from "./contexts/MemoContext";
+import { Header } from "./components/Header";
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Header />
         <Link to="/">Home</Link>
         <Link to="/read">Read</Link>
         <Link to="/fix">Fix</Link>
