@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import "../Icons/Book.css";
-import { useEffect, useState } from "react";
 
 export const Book = ({ isState }) => {
   return (

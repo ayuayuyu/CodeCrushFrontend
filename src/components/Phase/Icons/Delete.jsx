@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import "../Icons/Delete.css";
-import { useEffect, useState } from "react";
 
 export const Delete = ({ isState }) => {
   return (

@@ -1,36 +1,25 @@
 import { Timer } from "../Timer/index";
 import { Memo } from "../Memo/index";
+import { Phase } from "../Phase/index";
 
 export const Sidebar = ({ setIsFinish }) => {
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        gridTemplateRows: "1fr 1fr 4fr",
+        display: "flex",
         flexDirection: "column",
-        width: "25%",
-        padding: "0px 46px 0px 20px",
-        boxSizing: "border-box",
+        width: "20vw",
         backgroundColor: "#F3F5F6",
+        gap: "20px",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          textAlign: "center",
-          alignContent: "center",
-        }}
-      >
-        フェーズ
-      </div>
+      <Phase />
       <div
         style={{
           alignContent: "center",
         }}
       >
-        <Timer setIsFinish={setIsFinish} initialTime={61} />
+        <Timer setIsFinish={setIsFinish} initialTime={1000} />
       </div>
       <Memo />
     </div>

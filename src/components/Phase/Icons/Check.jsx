@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import "../Icons/Check.css";
-import { useEffect, useState } from "react";
 
 export const Check = ({ isState }) => {
   return (

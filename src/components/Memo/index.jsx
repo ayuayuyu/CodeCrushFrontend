@@ -24,6 +24,7 @@ export const Memo = () => {
         boxShadow: "0 0 10px #00000010",
         borderRadius: "30px",
         backgroundColor: "#FFFFFF",
+        height: "100%",
       }}
     >
       <div

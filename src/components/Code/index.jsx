@@ -51,7 +51,6 @@ export const Code = () => {
         readOnly={canEdit} //編集可否の設定(true:可能,false:不可能)
         style={{
           width: "100%",
-          // height: "45vh",
           fontSize: "1rem",
           color: "black",
           border: "none",

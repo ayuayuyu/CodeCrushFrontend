@@ -1,14 +1,15 @@
 .layout {
-  padding-top: 80px;
+  padding-top: 12vh;
   height: 85vh;
 }
 
 .layout-main {
   display: flex;
   flex-direction: row;
-  margin-left: 46px;
-  margin-right: 46px;
   background-color: #f3f5f6;
+  width: 90vw;
+  margin: 0 auto;
+  gap: 46px;
 }
 
 .layout-inputform {
