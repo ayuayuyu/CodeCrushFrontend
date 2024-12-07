@@ -1,24 +1,28 @@
+import { useLocation, useNavigate } from "react-router-dom";
+import { Sidebar } from "../../components/Sidebar/index";
+import { Main } from "../../components/Main/index";
+import { Header } from "../../components/Header/index";
 import { useState } from "react";
-import { Sidebar } from "../../components/Sidebar";
-import { Main } from "../../components/Main";
-import "./index.css";
-
+import "../index.css";
 export const Read = () => {
   const [isFinish, setIsFinish] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
+
+  if (isFinish) {
+    navigate("/delete");
+  }
 
   return (
-    <>
-      <div
-        style={{
-          paddingTop: "100px",
-          height: "90%",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <Sidebar setIsFinish={setIsFinish} />
-        <Main />
-      </div>
-    </>
+    <div className="layout">
+      <Header />
+      {showSidebar && (
+        <div className="layout-main">
+          <Sidebar setIsFinish={setIsFinish} />
+          <Main />
+        </div>
+      )}
+    </div>
   );
 };

@@ -10,7 +10,7 @@ export const Sidebar = ({ setIsFinish }) => {
         gridTemplateRows: "1fr 1fr 4fr",
         flexDirection: "column",
         width: "25%",
-        padding: "0px 20px",
+        padding: "0px 46px 0px 20px",
         boxSizing: "border-box",
       }}
     >

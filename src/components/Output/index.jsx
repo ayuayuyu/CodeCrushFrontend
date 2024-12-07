@@ -26,6 +26,7 @@ export const Output = ({ outputArray }) => {
           <p
             style={{
               color: "#5A6977",
+              fontWeight: "bold",
               width: "100%",
               borderBottom: "0.125rem solid #DBE2E7",
             }}
@@ -34,9 +35,10 @@ export const Output = ({ outputArray }) => {
           </p>
           <div
             style={{
+              marginTop: "10px",
               overflow: "auto",
               width: "100%",
-              height: "7.375rem",
+              height: "9.3rem",
               color: "#5A6977",
             }}
           >

@@ -1,8 +1,8 @@
 import { useCallback, useState, useEffect } from "react";
-import ReactCodeMirror, { color, EditorView } from "@uiw/react-codemirror";
+import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
-export const Code = () => {
-  const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
+export const Code = ({ code, setCode }) => {
+  //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
 
   //コードエディタ上のコードの変更を行う関数
