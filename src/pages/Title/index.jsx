@@ -10,8 +10,14 @@ export const Title = () => {
     <>
       <div className="title-container" onClick={() => navigate("/read")}>
         <div className="titleBox">
-          <Logo />
-          <p className="main-title">CodeCrush</p>
+          <img
+            src="/CodeCrushLogo.svg"
+            alt="titleLogo"
+            style={{
+              width: "500px",
+              height: "auto",
+            }}
+          />
         </div>
         <p className="subtitle">read & create</p>
       </div>
