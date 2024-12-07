@@ -1,7 +1,6 @@
 .phase {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 30px;
   border: 3px solid #41bcff;
   width: 100%;
@@ -10,13 +9,20 @@
   box-sizing: border-box;
 }
 
-.phase-icon {
+.phase-top-content {
   display: flex;
-  gap: 10px;
-  justify-content: center;
   align-items: center;
   width: fit-content;
   margin-bottom: 10px;
+}
+
+.phase-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .phase-bottom-content {
@@ -31,7 +37,7 @@
   align-items: center;
   background: #41bcff;
   border-radius: 24px;
-  padding: 2px 6px;
+  padding: 2px 7px;
 }
 
 .phase-target-word {
@@ -44,4 +50,12 @@
   font-weight: bold;
   font-size: 14px;
   color: #5a6977;
+}
+
+.back-line {
+  position: absolute;
+  z-index: 0;
+  height: 7px;
+  width: 213px;
+  background-color: #dbe2e7;
 }
