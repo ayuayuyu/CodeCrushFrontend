@@ -4,6 +4,7 @@ import { Player } from "../Player";
 export const InputForm = () => {
   const [roomId, setRoomId] = useState("");
   const [player, setPlayer] = useState("");
+  console.log(player);
 
   return (
     <div className="input-box">
@@ -27,13 +28,17 @@ export const InputForm = () => {
           <Player pattern={5} />
           <div className="button-box">
             <button
-              className="button-player"
+              className={`button-player ${
+                player === "player1" ? "active" : ""
+              }`}
               onClick={() => setPlayer("player1")}
             >
               プレイヤー１
             </button>
             <button
-              className="button-player"
+              className={`button-player ${
+                player === "player2" ? "active" : ""
+              }`}
               onClick={() => setPlayer("player2")}
             >
               プレイヤー２
