@@ -59,6 +59,7 @@ export const Timer = ({ initialTime, setIsFinish }) => {
           fontSize: "42px",
           fontWeight: "bold",
           flexGrow: "1",
+          boxSizing: "border-box",
         }}
       >
         <div>

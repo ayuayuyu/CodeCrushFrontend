@@ -19,7 +19,13 @@ export const Memo = () => {
   };
 
   return (
-    <div style={{ boxShadow: "0 0 10px #00000010", borderRadius: "30px" }}>
+    <div
+      style={{
+        boxShadow: "0 0 10px #00000010",
+        borderRadius: "30px",
+        backgroundColor: "#FFFFFF",
+      }}
+    >
       <div
         style={{
           color: "#5A6977",

@@ -12,6 +12,7 @@ export const Sidebar = ({ setIsFinish }) => {
         width: "25%",
         padding: "0px 46px 0px 20px",
         boxSizing: "border-box",
+        backgroundColor: "#F3F5F6",
       }}
     >
       <div
