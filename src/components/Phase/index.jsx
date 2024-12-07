@@ -10,12 +10,12 @@ export const Phase = ({ phase }) => {
   return (
     <div className="phase">
       <div className="phase-top-content">
-        <p className="phase-icon">
+        <div className="phase-icon">
           {phase === "read" ? <Book isState={1} /> : <Book isState={0} />}
           {phase === "delete" ? <Delete isState={1} /> : <Delete isState={0} />}
           {phase === "fix" ? <Create isState={1} /> : <Create isState={0} />}
           {phase === "answer" ? <Check isState={1} /> : <Check isState={0} />}
-        </p>
+        </div>
         <div className="back-line" />
       </div>
       {phase === "read" ? (
