@@ -1,8 +1,11 @@
 const apiUrl = import.meta.env.VITE_API_URL_2;
 
 const SendDefalutCode = ({ roomId, code }) => {
+  //エンドポイント
   const url = `${apiUrl}/defalutCode/${roomId}`;
+  //デバック用
   console.log(`SendStatus:  roomId: ${roomId} code: ${code}`);
+  //POSTメソッドで送るもの
   const sendData = { code: code };
 
   fetch(url, {

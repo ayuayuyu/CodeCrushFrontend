@@ -11,7 +11,6 @@ export const Delete = () => {
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const { code } = useContext(CodeContext);
-  console.log(`codeDelete: ${code}`);
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
 
@@ -22,6 +21,7 @@ export const Delete = () => {
 
   useEffect(() => {
     if (isFinish) {
+      //編集したコードを送るhttp通信のコンポーネント
       SendCrushCode({ code, roomId, player });
       navigate("/fix");
     }

@@ -3,9 +3,13 @@ import { CodeContext } from "../../../contexts/CodeContext";
 const apiUrl = import.meta.env.VITE_API_URL_2;
 export const GetCode = ({ roomId, player, setIsShow }) => {
   const { setCode } = useContext(CodeContext);
+  //エンドポイント
   const url = `${apiUrl}/getCode/${roomId}`;
+  //デバック用
   console.log(`roomId: ${roomId}, player: ${player}`);
+  //POSTメソッドで送るもの
   const sendData = { player: player, language: "c" };
+  //trueになるまで繰り返しhttp通信をして判定するもの
   const [isFinish, setIsFinish] = useState(false);
   const get = () => {
     fetch(url, {
@@ -26,10 +30,14 @@ export const GetCode = ({ roomId, player, setIsShow }) => {
       //ここのdataにレスポンスの値が入っている
       .then((data) => {
         console.log("Success:", data);
+        //player1とplayer2どちらも送られてコードの交換ができた時
         if (data.status == "exchanged") {
           console.log(`code: ${data.code}`);
+          //コードを保存する
           setCode(data.code);
+          //http通信を終える
           setIsFinish(true);
+          //Modalから表示するものを変更する
           setIsShow(true);
         }
       })
@@ -39,6 +47,7 @@ export const GetCode = ({ roomId, player, setIsShow }) => {
       });
   };
   useEffect(() => {
+    //isFinishがfalseの時にhttp通信を繰り返す
     if (!isFinish) {
       const interval = setInterval(() => {
         get();

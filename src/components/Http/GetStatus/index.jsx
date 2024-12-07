@@ -7,7 +7,9 @@ const GetStatus = ({ roomId, status }) => {
   useEffect(() => {
     // 無名関数で非同期処理をラップ
     const fetchData = async () => {
+      //エンドポイント
       const url = `${apiUrl}/status/${status}/${roomId}`;
+      //デバック用
       console.log(`GetStatus : roomId: ${roomId} status: ${status}`);
 
       try {
@@ -32,6 +34,7 @@ const GetStatus = ({ roomId, status }) => {
     fetchData();
   }, [roomId, status]); // `status` も依存関係に追加
 
+  //現在のステータスの状態の表示
   return (
     <div>
       <span>status</span>: {state.status || state.error || "null"}

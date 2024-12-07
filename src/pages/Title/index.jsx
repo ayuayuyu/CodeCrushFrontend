@@ -6,9 +6,12 @@ import { CodeContext } from "../../contexts/CodeContext";
 
 export const Title = () => {
   const navigate = useNavigate();
+  //最初にコードの取得をする
   const { code, setCode } = useContext(CodeContext);
   //以下はテストコードのためのものです
   const roomId = "12345";
+  //ここまで
+
   // ファイルからコードを取得してコードエディタ上に表示させる
   useEffect(() => {
     fetch("/exercise01.c")
@@ -25,10 +28,10 @@ export const Title = () => {
         console.error("エラー:", error);
       });
   }, []);
-  //ここまで
 
   const handleSubmit = () => {
-    console.log(`titleCode: ${code}`);
+    //変更されたコードを判定するために必要
+    //変更前のコードをhttp通信で送るコンポーネント
     SendDefalutCode({ roomId, code });
     navigate("/read");
   };

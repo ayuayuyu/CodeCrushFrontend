@@ -10,6 +10,7 @@ import { Modal } from "../../components/Modal";
 export const Fix = () => {
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
+  //コードを受け取ったらtrueになる
   const [isShow, setIsShow] = useState(false);
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
@@ -19,14 +20,16 @@ export const Fix = () => {
   const player = "player1";
   //ここまで
 
+  //相手の変更されたコードを受け取るhttp通信のコンポーネント
   GetCode({ roomId, player, setIsShow });
-  console.log(`isShow: ${isShow}`);
+
   useEffect(() => {
     if (isFinish) {
       navigate("/answer");
     }
   }, [isFinish, navigate]);
 
+  //isShowがfalseの時にModalコンポーネントを表示する
   return (
     <>
       {!isShow ? (

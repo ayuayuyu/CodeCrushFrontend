@@ -1,8 +1,10 @@
 const apiUrl = import.meta.env.VITE_API_URL_2;
 
-const CheckPlayer = ({ roomId, player, setIsplayer }) => {
+export const CheckPlayer = ({ roomId, player, setIsplayer }) => {
+  //エンドポイント
   const url = `${apiUrl}/player/${roomId}`;
   console.log(`roomId: ${roomId}, player: ${player}`);
+  //POSTメソッドで送るもの
   const sendData = { player: player };
 
   fetch(url, {
@@ -36,5 +38,3 @@ const CheckPlayer = ({ roomId, player, setIsplayer }) => {
       console.error("Error:", error);
     });
 };
-
-export default CheckPlayer;

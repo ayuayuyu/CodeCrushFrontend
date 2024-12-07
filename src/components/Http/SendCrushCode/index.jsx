@@ -1,8 +1,11 @@
 const apiUrl = import.meta.env.VITE_API_URL_2;
 
 const SendCrushCode = ({ code, roomId, player }) => {
+  //エンドポイント
   const url = `${apiUrl}/codeCrush/${roomId}`;
+  //デバック用
   console.log(`roomId: ${roomId}, code: ${code}`);
+  //POSTメソッドで送るもの
   const sendData = { code: code, player: player };
 
   fetch(url, {
