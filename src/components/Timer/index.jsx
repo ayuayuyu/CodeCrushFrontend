@@ -1,7 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useTimer } from "react-timer-hook";
+import { GetStatus } from "../Http/GetStatus";
+import { RoomIdContext } from "../../contexts/RoomId";
+import { CodeContext } from "../../contexts/CodeContext";
 
 export const Timer = ({ initialTime, setIsFinish }) => {
+  const { roomId } = useContext(CodeContext);
   const time = new Date();
   time.setSeconds(time.getSeconds() + initialTime);
   const [countTime, setCountTime] = useState("timerHigh");
@@ -49,6 +53,7 @@ export const Timer = ({ initialTime, setIsFinish }) => {
 
   return (
     <div>
+      <GetStatus roomId={roomId} />
       <div
         style={{
           ...timerStyles[countTime],
