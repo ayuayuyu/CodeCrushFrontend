@@ -13,13 +13,17 @@ export const Player = (props) => {
         return "#41BCFF";
       case 3:
         return "#2ADA6E";
+      case 4:
+        return "#41BCFF";
+      case 5:
+        return "#E54671";
       default:
         return "#FF41F2";
     }
   };
 
   const CheckPattern = ({ value }) => {
-    console.log(value, typeof value);
+    //console.log(value, typeof value);
 
     let message = "";
     switch (value) {
@@ -34,6 +38,12 @@ export const Player = (props) => {
         break;
       case 3:
         message = "答え";
+        break;
+      case 4:
+        message = "あいことば";
+        break;
+      case 5:
+        message = "プレイヤーの選択";
         break;
       default:
         message = "不正な値";

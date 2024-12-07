@@ -10,3 +10,11 @@
   margin-right: 46px;
   background-color: #f3f5f6;
 }
+
+.layout-inputform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

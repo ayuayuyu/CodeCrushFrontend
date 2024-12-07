@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Code } from "../Code";
 import { Output } from "../Output/index";
 import { Player } from "../Player";
@@ -6,9 +6,11 @@ import { Run } from "../Run";
 import { DocumentButton } from "./../CodeDocument/Button";
 import "./index.css";
 import { CodeDocument } from "../CodeDocument/Docment";
+import { CodeContext } from "../../contexts/CodeContext";
+
 
 export const Main = () => {
-  const [code, setCode] = useState("");
+  const { code } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
 

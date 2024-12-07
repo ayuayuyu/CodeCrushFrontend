@@ -1,32 +1,34 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useContext } from "react";
 import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
+import { CodeContext } from "../../contexts/CodeContext";
 
 export const Code = ({ code, setCode }) => {
   //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
-
+  const { code, setCode } = useContext(CodeContext);
   //コードエディタ上のコードの変更を行う関数
   const onChangeCode = useCallback((code) => {
     setCode(code);
+    console.log(code);
   }, []);
 
-  // ファイルからコードを取得してコードエディタ上に表示させる
-  useEffect(() => {
-    fetch("/exercise01.c")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("ファイルの読み込みに失敗しました");
-        }
-        return response.text();
-      })
-      .then((text) => {
-        setCode(text);
-      })
-      .catch((error) => {
-        console.error("エラー:", error);
-      });
-  }, []);
+  // // ファイルからコードを取得してコードエディタ上に表示させる
+  // useEffect(() => {
+  //   fetch("/exercise01.c")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("ファイルの読み込みに失敗しました");
+  //       }
+  //       return response.text();
+  //     })
+  //     .then((text) => {
+  //       setCode(text);
+  //     })
+  //     .catch((error) => {
+  //       console.error("エラー:", error);
+  //     });
+  // }, []);
 
   return (
     <div>
