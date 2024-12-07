@@ -1,0 +1,11 @@
+.layout {
+  padding-top: 100px;
+  height: 85vh;
+}
+
+.layout-main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 46px;
+  margin-right: 46px;
+}

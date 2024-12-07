@@ -12,8 +12,8 @@
 .runIcon {
   color: #ff9f40;
   padding-left: 0.0625rem;
+}
 
-  :active {
-    color: #f58b22;
-  }
+.runIcon:active {
+  color: #f58b22;
 }

@@ -1,8 +1,8 @@
 import { useCallback, useState, useEffect } from "react";
 import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
-export const Code = () => {
-  const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
+export const Code = ({ code, setCode }) => {
+  //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
 
   //コードエディタ上のコードの変更を行う関数
@@ -37,11 +37,15 @@ export const Code = () => {
           ".cm-scroller": {
             minHeight: "45vh",
           },
+          ".cm-gutters": {
+            backgroundColor: "#FFFFFF",
+            color: "B2BBC5",
+          },
         }),
       ]}
       readOnly={canEdit} //編集可否の設定(true:可能,false:不可能)
       style={{
-        width: "65%",
+        //width: "65%",
         height: "45vh",
         overflowY: "auto",
         fontSize: "1rem",

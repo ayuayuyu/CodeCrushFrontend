@@ -11,22 +11,23 @@ export const Output = ({ outputArray }) => {
       <div
         style={{
           backgroundColor: "#FFFFFF",
-          border: "0.1875rem solid #DBE2E7",
+          //border: "0.1875rem solid #DBE2E7",
           borderRadius: "1.875rem",
-          width: "52.75rem",
+          //width: "52.75rem",
           height: "12.625rem",
         }}
       >
         <div
           style={{
-            width: "fit-content",
+            padding: "15px",
             margin: "0 auto",
           }}
         >
           <p
             style={{
               color: "#5A6977",
-              width: "50.25rem",
+              fontWeight: "bold",
+              width: "100%",
               borderBottom: "0.125rem solid #DBE2E7",
             }}
           >
@@ -34,9 +35,10 @@ export const Output = ({ outputArray }) => {
           </p>
           <div
             style={{
+              marginTop: "10px",
               overflow: "auto",
-              width: "50.25rem",
-              height: "7.375rem",
+              width: "100%",
+              height: "9.3rem",
               color: "#5A6977",
             }}
           >

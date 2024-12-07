@@ -1,6 +1,6 @@
 .title-container {
-  width: 98vw;
-  height: 95vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
