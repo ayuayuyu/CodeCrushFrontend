@@ -13,8 +13,9 @@ export const Output = ({ outputArray }) => {
           backgroundColor: "#FFFFFF",
           border: "0.1875rem solid #DBE2E7",
           borderRadius: "1.875rem",
-          //width: "52.75rem",
+          width: "100%",
           height: "12.625rem",
+          boxSizing: "border-box",
         }}
       >
         <div
@@ -27,7 +28,7 @@ export const Output = ({ outputArray }) => {
             style={{
               color: "#5A6977",
               fontWeight: "bold",
-              width: "100%",
+              width: "fit-content",
               margin: "0 0 6px 24px",
             }}
           >

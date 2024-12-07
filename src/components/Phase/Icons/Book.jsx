@@ -1,21 +1,11 @@
-import img from "../../../assets/bookIcon.svg";
+import { Icon } from "@iconify/react";
+import "../Icons/Book.css";
 
-export const Book = () => {
+export const Book = ({ isState }) => {
   return (
     <>
-      <div
-        style={{
-          borderRadius: "12px",
-          border: "solid 3px #FFC80B",
-          width: "48px",
-          height: "48px",
-          background: "#FFF6D6",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <img src={img} />
+      <div className={isState ? "book-highlighted" : "default"}>
+        <Icon icon="heroicons:book-open-solid" height="26px" />
       </div>
     </>
   );

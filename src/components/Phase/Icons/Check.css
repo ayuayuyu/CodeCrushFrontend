@@ -1,0 +1,23 @@
+.check-highlighted {
+  border-radius: 12px;
+  color: #41bcff;
+  border: solid 3px #41bcff;
+  width: 48px;
+  height: 48px;
+  background: #f1fafd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default {
+  border-radius: 12px;
+  border: 3px solid #dbe2e7;
+  color: #c7d2db;
+  width: 48px;
+  height: 48px;
+  background: #dbe2e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

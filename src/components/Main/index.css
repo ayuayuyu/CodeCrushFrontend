@@ -1,12 +1,8 @@
 .main-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  display: flex;
   flex-direction: column;
   width: 75vw;
-  /* padding: 0px 20px; */
   box-sizing: border-box;
-  border-radius: 1.875rem;
   row-gap: 20px;
 }
 
@@ -18,8 +14,8 @@
   padding: 15px;
   background-color: #ffffff;
   border-radius: 1.875rem;
-  width: 68vw;
-  min-width: 68vw;
+  width: 64.6vw;
+  min-width: 64.6vw;
 }
 .open {
   width: 36vw;
