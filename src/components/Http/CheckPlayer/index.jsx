@@ -1,6 +1,6 @@
 const apiUrl = import.meta.env.VITE_API_URL_2;
 
-export const CheckPlayer = ({ roomId, player, setIsplayer }) => {
+export const CheckPlayer = ({ roomId, player, setIsPlayer }) => {
   //エンドポイント
   const url = `${apiUrl}/player/${roomId}`;
   console.log(`roomId: ${roomId}, player: ${player}`);
@@ -27,9 +27,9 @@ export const CheckPlayer = ({ roomId, player, setIsplayer }) => {
       console.log("Success:", data);
       if (data.player == "false") {
         console.log(`${player}: ${data.player}`);
-        setIsplayer(false);
+        setIsPlayer(true);
       } else if (data.player == "true") {
-        setIsplayer(true);
+        setIsPlayer(false);
         alert(`${player}は存在しています。やり直してください。`);
       }
     })
