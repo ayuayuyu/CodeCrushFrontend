@@ -11,7 +11,7 @@ export const Delete = () => {
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const { code } = useContext(CodeContext);
-  console.log(code);
+  console.log(`codeDelete: ${code}`);
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
 
