@@ -3,7 +3,7 @@ import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
 import { CodeContext } from "../../contexts/CodeContext";
 
-export const Code = ({ canEdit }) => {
+export const Code = ({ isCanEdit }) => {
   //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   //const [canEdit, setCanEdit] = useState(true); //編集可能にするかどうか
   const { code, setCode } = useContext(CodeContext);
@@ -51,7 +51,7 @@ export const Code = ({ canEdit }) => {
             },
           }),
         ]}
-        readOnly={!canEdit} //編集可否の設定(true:可能,false:不可能)
+        readOnly={!isCanEdit} //編集可否の設定(true:可能,false:不可能)
         style={{
           width: "100%",
           // height: "45vh",

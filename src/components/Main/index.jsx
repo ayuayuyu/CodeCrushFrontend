@@ -31,7 +31,7 @@ export const Main = ({ editFlag }) => {
               backgroundColor: "#DBE2E7",
             }}
           />
-          <Code canEdit={editFlag} />
+          <Code isCanEdit={editFlag} />
         </div>
         {isDocumentOpen ? <CodeDocument /> : <div />}
       </div>
