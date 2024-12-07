@@ -44,9 +44,9 @@ export const CodeDocument = () => {
       </div>
       <div
         style={{
-          height: "2px",
+          height: "5px",
           width: "90%",
-          margin: "0 auto 14px auto",
+          margin: "0 auto 8px auto",
           borderRadius: "10px",
           backgroundColor: "#DBE2E7",
         }}

@@ -15,7 +15,13 @@ export const Main = () => {
 
   return (
     <div className="main-container">
-      <div style={{ display: "flex", gap: isDocumentOpen ? "20px" : 0 }}>
+      <div
+        style={{
+          display: "flex",
+          gap: isDocumentOpen ? "20px" : 0,
+          height: "100%",
+        }}
+      >
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
           <div className="main-header">
             <Player pattern={1} />
