@@ -12,6 +12,7 @@
 .runIcon {
   color: #ff9f40;
   padding-left: 0.0625rem;
+  margin-left: 2px;
 }
 
 .runIcon:active {

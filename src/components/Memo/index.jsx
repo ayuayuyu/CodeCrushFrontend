@@ -41,7 +41,7 @@ export const Memo = () => {
       <div
         style={{
           height: "2px",
-          width: "97%",
+          width: "90%",
           margin: "0 auto",
           borderRadius: "10px",
           backgroundColor: "#DBE2E7",
@@ -53,7 +53,9 @@ export const Memo = () => {
         rows="5"
         style={{
           display: "block",
-          width: "96.8%",
+          marginTop: "10px",
+          width: "86%",
+          height: "82%",
           color: "#5A6977",
           margin: "0 auto",
           resize: "none",

@@ -68,6 +68,7 @@ export const Player = (props) => {
         padding: "0.375rem 0.625rem 0.375rem 0.625rem",
         height: "auto",
         fontSize: "0.875rem",
+        fontWeight: "bold",
         textAlign: "center",
         color: "white",
         backgroundColor: getBackgroundColor(pattern),
