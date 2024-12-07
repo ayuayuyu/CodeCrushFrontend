@@ -12,8 +12,9 @@
 .phase-top-content {
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: 100%;
   margin-bottom: 10px;
+  justify-content: center;
 }
 
 .phase-icon {
@@ -28,6 +29,7 @@
 .phase-bottom-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
 }
 

@@ -9,8 +9,9 @@ import { CodeDocument } from "../CodeDocument/Docment";
 import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { GetStatus } from "../Http/GetStatus";
+import { PlayerContext } from "../../contexts/Player";
 
-export const Main = ({ editFlag }) => {
+export const Main = ({ editFlag, phase }) => {
   const { code, setCode } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
@@ -21,10 +22,10 @@ export const Main = ({ editFlag }) => {
 
   // const phaseStatus = "answer";
   useEffect(() => {
-    if (state === "answer") {
+    if (phase === "answer") {
       setIsDocumentOpen(true);
     }
-  }, [state]);
+  }, [phase]);
 
   return (
     <div className="main-container">
@@ -33,12 +34,13 @@ export const Main = ({ editFlag }) => {
           display: "flex",
           gap: isDocumentOpen ? "20px" : 0,
           height: "55vh",
+          justifyContent: "space-between",
         }}
       >
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
           <div className="main-header">
             <Player pattern={1} />
-            {state !== "answer" ? (
+            {phase !== "answer" ? (
               <>
                 <Run code={code} setOutputArray={setOutputArray} />
                 <DocumentButton setIsDocumentOpen={setIsDocumentOpen} />
@@ -58,7 +60,7 @@ export const Main = ({ editFlag }) => {
           />
           <Code isCanEdit={editFlag} />
         </div>
-        {state === "answer" ? (
+        {phase === "answer" ? (
           <div className={`main-inner ${isDocumentOpen ? "answer-open" : ""}`}>
             <div className="main-header">
               <Player pattern={3} />

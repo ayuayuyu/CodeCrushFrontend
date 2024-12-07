@@ -12,6 +12,7 @@ import { SendStatus } from "../../components/Http/SendStatus";
 
 export const Delete = () => {
   const navigate = useNavigate();
+  const [pageState, setPageState] = useState("delete");
   const [isFinish, setIsFinish] = useState(false);
   const { code } = useContext(CodeContext);
   const { roomId } = useContext(RoomIdContext);
@@ -34,8 +35,8 @@ export const Delete = () => {
       <Header />
       {showSidebar && (
         <div className="layout-main">
-          <Sidebar setIsFinish={setIsFinish} />
-          <Main editFlag={true} />
+          <Sidebar setIsFinish={setIsFinish} phase={pageState} />
+          <Main editFlag={true} phase={pageState} />
         </div>
       )}
     </div>

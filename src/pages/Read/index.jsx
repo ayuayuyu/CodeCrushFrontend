@@ -5,6 +5,7 @@ import { Header } from "../../components/Header/index";
 import { useEffect, useState } from "react";
 import "../index.css";
 export const Read = () => {
+  const [pageState, setPageState] = useState("read");
   const [isFinish, setIsFinish] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,8 +22,8 @@ export const Read = () => {
       <Header />
       {showSidebar && (
         <div className="layout-main">
-          <Sidebar setIsFinish={setIsFinish} />
-          <Main editFlag={false} />
+          <Sidebar setIsFinish={setIsFinish} phase={pageState} />
+          <Main editFlag={false} phase={pageState} />
         </div>
       )}
     </div>

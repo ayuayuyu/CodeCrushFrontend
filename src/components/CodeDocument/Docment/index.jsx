@@ -27,7 +27,8 @@ export const CodeDocument = () => {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "438px",
+        height: "100%",
+        boxSizing: "border-box",
       }}
     >
       <div

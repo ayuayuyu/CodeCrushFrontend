@@ -1,16 +1,24 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useTimer } from "react-timer-hook";
 import { GetStatus } from "../Http/GetStatus";
-import { RoomIdContext } from "../../contexts/RoomId";
 import { CodeContext } from "../../contexts/CodeContext";
 
-export const Timer = ({ initialTime, setIsFinish }) => {
+export const Timer = ({ setIsFinish, phase }) => {
+  let initialTime = 6000;
+  if (phase === "read") {
+    initialTime = 180;
+  } else if (phase === "delete") {
+    initialTime = 180;
+  } else if (phase === "fix") {
+    initialTime = 300;
+  }
+
   const { roomId } = useContext(CodeContext);
   const time = new Date();
   time.setSeconds(time.getSeconds() + initialTime);
   const [countTime, setCountTime] = useState("timerHigh");
 
-  const { seconds, minutes } = useTimer({
+  const { seconds, minutes, isRunning, start, pause } = useTimer({
     expiryTimestamp: time,
     onExpire: () => console.warn("onExpire called"),
     autoStart: true, //trueの場合タイマーをは自動でスタート、falseの場合はボタンを押してスタート
@@ -32,6 +40,14 @@ export const Timer = ({ initialTime, setIsFinish }) => {
   useEffect(() => {
     updateCountTime();
   }, [updateCountTime]);
+
+  useEffect(() => {
+    if (phase === "answer") {
+      pause(); // タイマーを停止
+    } else {
+      start(); // phase が "answer" でないときはスタート
+    }
+  }, [phase, start, pause]);
 
   const timerStyles = {
     timerHigh: {
@@ -67,11 +83,15 @@ export const Timer = ({ initialTime, setIsFinish }) => {
           boxSizing: "border-box",
         }}
       >
-        <div>
-          <span style={{ fontSize: "14px" }}>残り時間</span>
-          <span>{minutes}</span>:
-          <span>{seconds < 10 ? "0" + seconds : "" + seconds}</span>
-        </div>
+        {phase !== "answer" ? (
+          <div>
+            <span style={{ fontSize: "14px" }}>残り時間</span>
+            <span>{minutes}</span>:
+            <span>{seconds < 10 ? "0" + seconds : "" + seconds}</span>
+          </div>
+        ) : (
+          <p>終了</p>
+        )}
       </div>
     </div>
   );
