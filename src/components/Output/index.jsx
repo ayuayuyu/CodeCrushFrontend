@@ -11,7 +11,7 @@ export const Output = ({ outputArray }) => {
       <div
         style={{
           backgroundColor: "#FFFFFF",
-          //border: "0.1875rem solid #DBE2E7",
+          border: "0.1875rem solid #DBE2E7",
           borderRadius: "1.875rem",
           //width: "52.75rem",
           height: "12.625rem",

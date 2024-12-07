@@ -19,7 +19,6 @@ export const Title = () => {
         </div>
         <p className="subtitle">read & create</p>
       </div>
-      <p>Title</p>
     </>
   );
 };
