@@ -1,8 +1,8 @@
 const apiUrl = import.meta.env.VITE_API_URL_2;
 
-const SendCrushCode = ({ code, roomId, player }) => {
+export const SendDeleteCode = ({ code, roomId, player }) => {
   //エンドポイント
-  const url = `${apiUrl}/codeCrush/${roomId}`;
+  const url = `${apiUrl}/deleteCode/${roomId}`;
   //デバック用
   console.log(`roomId: ${roomId}, code: ${code}`);
   //POSTメソッドで送るもの
@@ -32,5 +32,3 @@ const SendCrushCode = ({ code, roomId, player }) => {
       console.error("Error:", error);
     });
 };
-
-export default SendCrushCode;

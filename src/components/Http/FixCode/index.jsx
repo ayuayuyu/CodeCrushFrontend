@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import { CodeContext } from "../../../contexts/CodeContext";
 const apiUrl = import.meta.env.VITE_API_URL_2;
-export const GetCode = ({ roomId, player, setIsShow }) => {
+export const FixCode = ({ roomId, player, setIsShow }) => {
   const { setCode } = useContext(CodeContext);
   //エンドポイント
-  const url = `${apiUrl}/getCode/${roomId}`;
+  const url = `${apiUrl}/fixCode/${roomId}`;
   //デバック用
   console.log(`roomId: ${roomId}, player: ${player}`);
   //POSTメソッドで送るもの
