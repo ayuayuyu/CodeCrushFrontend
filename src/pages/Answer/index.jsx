@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../index.css";
 
 export const Answer = () => {
+  const [pageState, setPageState] = useState("answer");
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const location = useLocation();
@@ -22,8 +23,8 @@ export const Answer = () => {
       <Header />
       {showSidebar && (
         <div className="layout-main">
-          <Sidebar setIsFinish={setIsFinish} />
-          <Main editFlag={true} />
+          <Sidebar setIsFinish={setIsFinish} phase={pageState} />
+          <Main editFlag={true} phase={pageState} />
         </div>
       )}
     </div>

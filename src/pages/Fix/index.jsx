@@ -10,6 +10,7 @@ import { RoomIdContext } from "../../contexts/RoomId";
 import { PlayerContext } from "../../contexts/Player";
 
 export const Fix = () => {
+  const [pageState, setPageState] = useState("fix");
   const navigate = useNavigate();
   const [isFinish, setIsFinish] = useState(false);
   const { roomId } = useContext(RoomIdContext);
@@ -38,8 +39,12 @@ export const Fix = () => {
           <Header />
           {showSidebar && (
             <div className="layout-main">
-              <Sidebar setIsFinish={setIsFinish} />
-              <Main editFlag={true} />
+              <Sidebar
+                setIsFinish={setIsFinish}
+                initialTime={300}
+                phase={pageState}
+              />
+              <Main editFlag={true} phase={pageState} />
             </div>
           )}
         </div>

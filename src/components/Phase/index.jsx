@@ -3,11 +3,9 @@ import { Book } from "./Icons/Book";
 import { Delete } from "./Icons/Delete";
 import { Create } from "./Icons/Create/";
 import { Check } from "./Icons/Check";
-import { useState } from "react";
 import "./index.css";
 
-export const Phase = () => {
-  const [phase, setPhase] = useState("read");
+export const Phase = ({ phase }) => {
   //フェーズの管理をする
   return (
     <div className="phase">
