@@ -29,7 +29,7 @@ export const Title = () => {
             }}
           />
         </div>
-        <p className="subtitle">read & create</p>
+        <p className="subtitle">read & write</p>
       </div>
     </>
   );
