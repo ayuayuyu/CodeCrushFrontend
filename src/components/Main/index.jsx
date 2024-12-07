@@ -17,6 +17,15 @@ export const Main = () => {
           <Run code={code} setOutputArray={setOutputArray} />
           仕様書
         </div>
+        <div
+          style={{
+            height: "2px",
+            width: "99.8%",
+            margin: "0 auto 6px auto",
+            borderRadius: "10px",
+            backgroundColor: "#DBE2E7",
+          }}
+        />
         <Code code={code} setCode={setCode} />
       </div>
       <Output outputArray={outputArray} />

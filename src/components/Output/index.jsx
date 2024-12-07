@@ -19,7 +19,7 @@ export const Output = ({ outputArray }) => {
       >
         <div
           style={{
-            padding: "15px",
+            padding: "8px 15px 15px 15px",
             margin: "0 auto",
           }}
         >
@@ -28,11 +28,20 @@ export const Output = ({ outputArray }) => {
               color: "#5A6977",
               fontWeight: "bold",
               width: "100%",
-              borderBottom: "0.125rem solid #DBE2E7",
+              margin: "0 0 6px 24px",
             }}
           >
             実行結果
           </p>
+          <div
+            style={{
+              height: "2px",
+              width: "98%",
+              margin: "0 auto",
+              borderRadius: "10px",
+              backgroundColor: "#DBE2E7",
+            }}
+          />
           <div
             style={{
               marginTop: "10px",

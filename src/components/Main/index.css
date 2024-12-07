@@ -22,10 +22,10 @@
 
 .main-header {
   height: 5vh;
-  border-bottom: 0.1875rem solid #dbe2e7;
-  margin-bottom: 1vh;
   margin-left: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
+  padding-left: 9px;
+  padding-right: 9px;
   margin-right: 5px;
   display: flex;
   align-items: center;
