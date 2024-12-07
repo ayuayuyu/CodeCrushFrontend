@@ -1,7 +1,10 @@
+import "./index.css";
 export const Modal = () => {
   return (
     <>
-      <div>waiting</div>
+      <div className="center">
+        <p className="font">waiting</p>
+      </div>
     </>
   );
 };

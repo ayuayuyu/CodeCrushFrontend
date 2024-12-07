@@ -1,13 +1,13 @@
 import SendDefalutCode from "../../components/Http/SendDefalutCode";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CodeContext } from "../../contexts/CodeContext";
 
 export const Title = () => {
   const navigate = useNavigate();
-
+  const { code, setCode } = useContext(CodeContext);
   //以下はテストコードのためのものです
-  const [code, setCode] = useState("");
   const roomId = "12345";
   // ファイルからコードを取得してコードエディタ上に表示させる
   useEffect(() => {
@@ -28,6 +28,7 @@ export const Title = () => {
   //ここまで
 
   const handleSubmit = () => {
+    console.log(`titleCode: ${code}`);
     SendDefalutCode({ roomId, code });
     navigate("/read");
   };

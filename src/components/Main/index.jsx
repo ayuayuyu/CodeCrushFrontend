@@ -7,7 +7,7 @@ import "./index.css";
 import { CodeContext } from "../../contexts/CodeContext";
 
 export const Main = () => {
-  const { code, setCode } = useContext(CodeContext);
+  const { code } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
 
   return (
@@ -18,7 +18,7 @@ export const Main = () => {
           <Run code={code} setOutputArray={setOutputArray} />
           仕様書
         </div>
-        <Code code={code} setCode={setCode} />
+        <Code />
       </div>
       <Output outputArray={outputArray} />
     </div>

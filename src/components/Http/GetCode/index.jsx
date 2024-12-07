@@ -27,8 +27,7 @@ export const GetCode = ({ roomId, player, setIsShow }) => {
       .then((data) => {
         console.log("Success:", data);
         if (data.status == "exchanged") {
-          console.log(`status: ${data.status}`);
-          console.log(`status: ${data.code}`);
+          console.log(`code: ${data.code}`);
           setCode(data.code);
           setIsFinish(true);
           setIsShow(true);

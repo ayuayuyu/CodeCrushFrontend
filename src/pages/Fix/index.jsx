@@ -19,7 +19,7 @@ export const Fix = () => {
   const player = "player1";
   //ここまで
 
-  GetCode({ roomId, player, setIsShow });
+  // GetCode({ roomId, player, setIsShow });
   console.log(`isShow: ${isShow}`);
   useEffect(() => {
     if (isFinish) {
