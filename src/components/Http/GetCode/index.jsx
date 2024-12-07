@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-
+import { useEffect, useState, useContext } from "react";
+import { CodeContext } from "../../../contexts/CodeContext";
 const apiUrl = import.meta.env.VITE_API_URL_2;
 export const GetCode = ({ roomId, player, setIsShow }) => {
+  const { setCode } = useContext(CodeContext);
   const url = `${apiUrl}/getCode/${roomId}`;
   console.log(`roomId: ${roomId}, player: ${player}`);
   const sendData = { player: player, language: "c" };
@@ -28,6 +29,7 @@ export const GetCode = ({ roomId, player, setIsShow }) => {
         if (data.status == "exchanged") {
           console.log(`status: ${data.status}`);
           console.log(`status: ${data.code}`);
+          setCode(data.code);
           setIsFinish(true);
           setIsShow(true);
         }
