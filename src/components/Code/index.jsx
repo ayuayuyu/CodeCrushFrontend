@@ -3,15 +3,18 @@ import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
 import { CodeContext } from "../../contexts/CodeContext";
 
-export const Code = () => {
+export const Code = ({ isCanEdit }) => {
   //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
-  const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
+  //const [canEdit, setCanEdit] = useState(true); //編集可能にするかどうか
   const { code, setCode } = useContext(CodeContext);
   //コードエディタ上のコードの変更を行う関数
-  const onChangeCode = useCallback((code) => {
-    setCode(code);
-    console.log(code);
-  }, []);
+  const onChangeCode = useCallback(
+    (code) => {
+      setCode(code);
+      console.log(code);
+    },
+    [setCode]
+  );
 
   // // ファイルからコードを取得してコードエディタ上に表示させる
   // useEffect(() => {
@@ -48,9 +51,10 @@ export const Code = () => {
             },
           }),
         ]}
-        readOnly={canEdit} //編集可否の設定(true:可能,false:不可能)
+        readOnly={!isCanEdit} //編集可否の設定(true:可能,false:不可能)
         style={{
           width: "100%",
+          // height: "45vh",
           fontSize: "1rem",
           color: "black",
           border: "none",

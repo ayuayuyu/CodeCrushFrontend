@@ -22,7 +22,7 @@ export const Read = () => {
       {showSidebar && (
         <div className="layout-main">
           <Sidebar setIsFinish={setIsFinish} />
-          <Main />
+          <Main editFlag={false} />
         </div>
       )}
     </div>

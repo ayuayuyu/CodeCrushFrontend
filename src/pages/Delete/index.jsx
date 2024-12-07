@@ -4,7 +4,7 @@ import { Header } from "../../components/Header/index";
 import { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../index.css";
-import SendCrushCode from "../../components/Http/SendCrushCode";
+import { SendDeleteCode } from "../../components/Http/SendDeleteCode";
 import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { PlayerContext } from "../../contexts/Player";
@@ -21,7 +21,7 @@ export const Delete = () => {
   useEffect(() => {
     if (isFinish) {
       //編集したコードを送るhttp通信のコンポーネント
-      SendCrushCode({ code, roomId, player });
+      SendDeleteCode({ code, roomId, player });
       navigate("/fix");
     }
   }, [isFinish, navigate]);
@@ -32,7 +32,7 @@ export const Delete = () => {
       {showSidebar && (
         <div className="layout-main">
           <Sidebar setIsFinish={setIsFinish} />
-          <Main />
+          <Main editFlag={true} />
         </div>
       )}
     </div>

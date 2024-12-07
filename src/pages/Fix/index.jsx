@@ -4,7 +4,7 @@ import { Main } from "../../components/Main/index";
 import { Header } from "../../components/Header/index";
 import { useState, useEffect, useContext } from "react";
 import "../index.css";
-import { GetCode } from "../../components/Http/GetCode";
+import { FixCode } from "../../components/Http/FixCode";
 import { Modal } from "../../components/Modal";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { PlayerContext } from "../../contexts/Player";
@@ -20,7 +20,7 @@ export const Fix = () => {
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
 
   //相手の変更されたコードを受け取るhttp通信のコンポーネント
-  GetCode({ roomId, player, setIsShow });
+  FixCode({ roomId, player, setIsShow });
 
   useEffect(() => {
     if (isFinish) {
@@ -39,7 +39,7 @@ export const Fix = () => {
           {showSidebar && (
             <div className="layout-main">
               <Sidebar setIsFinish={setIsFinish} />
-              <Main />
+              <Main editFlag={true} />
             </div>
           )}
         </div>
