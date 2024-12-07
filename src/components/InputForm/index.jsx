@@ -7,7 +7,7 @@ export const InputForm = ({ setIsFinish }) => {
   //roomIdを入力
   const { roomId, setRoomId } = useContext(RoomIdContext);
   //playerの入力
-  const { setPlayer } = useContext(PlayerContext);
+  const { player, setPlayer } = useContext(PlayerContext);
 
   //roomIdをセットする
   const handleRoomIdChange = (e) => {
