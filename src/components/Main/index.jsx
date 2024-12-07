@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Code } from "../Code";
 import { Output } from "../Output/index";
 import { Player } from "../Player";
 import { Run } from "../Run";
 import "./index.css";
+import { CodeContext } from "../../contexts/CodeContext";
 
 export const Main = () => {
-  const [code, setCode] = useState("");
+  const { code, setCode } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
 
   return (

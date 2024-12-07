@@ -1,13 +1,14 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useContext } from "react";
 import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
 import { cppLanguage } from "@codemirror/lang-cpp";
+import { CodeContext } from "../../contexts/CodeContext";
 export const Code = ({ code, setCode }) => {
-  //const [code, setCode] = useState(""); //コードエディタ上に表示するコードを格納する
   const [canEdit, setCanEdit] = useState(false); //編集可能にするかどうか
 
   //コードエディタ上のコードの変更を行う関数
   const onChangeCode = useCallback((code) => {
     setCode(code);
+    console.log(code);
   }, []);
 
   // ファイルからコードを取得してコードエディタ上に表示させる
