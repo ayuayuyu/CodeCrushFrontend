@@ -40,7 +40,7 @@ export const Main = ({ editFlag, phase }) => {
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
           <div className="main-header">
             <Player pattern={1} />
-            {state !== "answer" ? (
+            {phase !== "answer" ? (
               <>
                 <Run code={code} setOutputArray={setOutputArray} />
                 <DocumentButton setIsDocumentOpen={setIsDocumentOpen} />
