@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 const CodeContext = createContext();
 
 export const CodeProvider = ({ children }) => {
-  // メモの内容を管理するための状態を定義
+  // コードの内容を管理するための状態を定義
   const [code, setCode] = useState("");
   return (
     <CodeContext.Provider value={{ code, setCode }}>

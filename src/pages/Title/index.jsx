@@ -33,7 +33,7 @@ export const Title = () => {
     //変更されたコードを判定するために必要
     //変更前のコードをhttp通信で送るコンポーネント
     SendDefalutCode({ roomId, code });
-    navigate("/read");
+    navigate("/match");
   };
 
   return (
