@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   flex-direction: column;
-  width: 75%;
+  width: 75vw;
   /* padding: 0px 20px; */
   box-sizing: border-box;
   border-radius: 1.875rem;
@@ -18,6 +18,12 @@
   padding: 15px;
   background-color: #ffffff;
   border-radius: 1.875rem;
+  width: 68vw;
+  min-width: 68vw;
+}
+.open {
+  width: 36vw;
+  min-width: 36vw;
 }
 
 .main-header {
