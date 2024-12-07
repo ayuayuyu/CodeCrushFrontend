@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar/index";
 import { Main } from "../../components/Main/index";
 import { Header } from "../../components/Header/index";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../index.css";
 
 export const Fix = () => {
@@ -11,9 +11,11 @@ export const Fix = () => {
   const location = useLocation();
   const showSidebar = location.pathname !== "/"; // "/" では Sidebar を非表示
 
-  if (isFinish) {
-    navigate("/answer");
-  }
+  useEffect(() => {
+    if (isFinish) {
+      navigate("/answer");
+    }
+  }, [isFinish, navigate]);
 
   return (
     <div className="layout">
