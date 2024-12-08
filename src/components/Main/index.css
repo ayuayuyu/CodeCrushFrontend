@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
-  border: 0.1875rem solid #dbe2e7;
+  border: 0.1875rem solid #ff9f40;
   padding: 15px;
   background-color: #ffffff;
   border-radius: 1.875rem;
@@ -24,6 +24,13 @@
 }
 
 .answer-open {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  border: 0.1875rem solid #2ada6e;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 1.875rem;
   width: 25vw;
   min-width: 25vw;
 }

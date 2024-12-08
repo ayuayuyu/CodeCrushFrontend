@@ -21,10 +21,10 @@ export const Memo = () => {
   return (
     <div
       style={{
-        boxShadow: "0 0 10px #00000010",
         borderRadius: "30px",
         backgroundColor: "#FFFFFF",
         height: "100%",
+        border: "0.1875rem solid #DBE2E7",
       }}
     >
       <div

@@ -62,7 +62,7 @@ export const Main = ({ editFlag, phase }) => {
           <Code isCanEdit={editFlag} />
         </div>
         {phase === "answer" ? (
-          <div className={`main-inner ${isDocumentOpen ? "answer-open" : ""}`}>
+          <div className="answer-open">
             <div className="main-header">
               <Player pattern={3} />
             </div>
