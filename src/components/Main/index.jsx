@@ -9,9 +9,34 @@ import { CodeDocument } from "../CodeDocument/Docment";
 import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { GetStatus } from "../Http/GetStatus";
-import { PlayerContext } from "../../contexts/Player";
+
+const getPatternNumber = (value) => {
+  let number;
+  switch (value) {
+    case "fix":
+      number = 0;
+      break;
+    case "delete":
+      number = 1;
+      break;
+    case "read":
+      number = 2;
+      break;
+    case "answer":
+      number = 3;
+      break;
+    default:
+      number = 6;
+      break;
+  }
+  console.log(number);
+
+  return number;
+};
 
 export const Main = ({ editFlag, phase }) => {
+  console.log(phase);
+  const pattern = getPatternNumber(phase);
   const { code, setCode } = useContext(CodeContext);
   const [outputArray, setOutputArray] = useState([]);
   const [isDocumentOpen, setIsDocumentOpen] = useState(false);
@@ -39,7 +64,11 @@ export const Main = ({ editFlag, phase }) => {
       >
         <div className={`main-inner ${isDocumentOpen ? "open" : ""}`}>
           <div className="main-header">
-            <Player pattern={1} />
+            {phase != "answer" ? (
+              <Player pattern={pattern} />
+            ) : (
+              <Player pattern={0} />
+            )}
             {phase !== "answer" ? (
               <>
                 <Run code={code} setOutputArray={setOutputArray} />
@@ -63,7 +92,7 @@ export const Main = ({ editFlag, phase }) => {
         {phase === "answer" ? (
           <div className={`main-inner ${isDocumentOpen ? "answer-open" : ""}`}>
             <div className="main-header">
-              <Player pattern={3} />
+              <Player pattern={pattern} />
             </div>
             <div
               style={{
