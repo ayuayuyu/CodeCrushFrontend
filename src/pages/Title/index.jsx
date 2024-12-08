@@ -31,7 +31,6 @@ export const Title = () => {
           />
         </div>
         <p className="subtitle">read & write</p>
-        <Modal />
       </div>
     </>
   );
