@@ -6,9 +6,9 @@ export const Player = (props) => {
   const getBackgroundColor = (pattern) => {
     switch (pattern) {
       case 0:
-        return "#E54671";
-      case 1:
         return "#41BCFF";
+      case 1:
+        return "#E54671";
       case 2:
         return "#41BCFF";
       case 3:
