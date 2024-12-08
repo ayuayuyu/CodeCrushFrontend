@@ -11,7 +11,6 @@ export const Timer = ({ setIsFinish, phase }) => {
     initialTime = 180;
   } else if (phase === "fix") {
     initialTime = 300;
-
   }
 
   const { roomId } = useContext(CodeContext);
@@ -76,6 +75,7 @@ export const Timer = ({ setIsFinish, phase }) => {
           ...timerStyles[countTime],
           borderRadius: "30px",
           width: "100%",
+          minHeight: "4.375rem",
           display: "flex",
           justifyContent: "center",
           fontSize: "42px",
@@ -85,7 +85,11 @@ export const Timer = ({ setIsFinish, phase }) => {
         }}
       >
         {phase !== "answer" ? (
-          <div>
+          <div
+            style={{
+              alignContent: "center",
+            }}
+          >
             <span style={{ fontSize: "14px" }}>残り時間</span>
             <span>{minutes}</span>:
             <span>{seconds < 10 ? "0" + seconds : "" + seconds}</span>
