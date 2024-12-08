@@ -9,6 +9,8 @@ import { CodeDocument } from "../CodeDocument/Docment";
 import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { GetStatus } from "../Http/GetStatus";
+import { PlayerContext } from "../../contexts/Player";
+import { AnswerCode } from "../Code/AnswerCode";
 
 const getPatternNumber = (value) => {
   let number;
@@ -33,6 +35,7 @@ const getPatternNumber = (value) => {
 
   return number;
 };
+
 
 export const Main = ({ editFlag, phase }) => {
   console.log(phase);
@@ -103,7 +106,7 @@ export const Main = ({ editFlag, phase }) => {
                 backgroundColor: "#DBE2E7",
               }}
             />
-            <Code isCanEdit={editFlag} />
+            <AnswerCode isCanEdit={editFlag} />
           </div>
         ) : (
           <> {isDocumentOpen ? <CodeDocument /> : <></>}</>
