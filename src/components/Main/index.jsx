@@ -10,6 +10,7 @@ import { CodeContext } from "../../contexts/CodeContext";
 import { RoomIdContext } from "../../contexts/RoomId";
 import { GetStatus } from "../Http/GetStatus";
 import { PlayerContext } from "../../contexts/Player";
+import { AnswerCode } from "../Code/AnswerCode";
 
 export const Main = ({ editFlag, phase }) => {
   const { code, setCode } = useContext(CodeContext);
@@ -74,7 +75,7 @@ export const Main = ({ editFlag, phase }) => {
                 backgroundColor: "#DBE2E7",
               }}
             />
-            <Code isCanEdit={editFlag} />
+            <AnswerCode isCanEdit={editFlag} />
           </div>
         ) : (
           <> {isDocumentOpen ? <CodeDocument /> : <></>}</>
