@@ -3,6 +3,7 @@ import "./index.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import { CodeContext } from "../../contexts/CodeContext";
+import { Modal } from "../../components/Modal";
 
 export const Title = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export const Title = () => {
           />
         </div>
         <p className="subtitle">read & write</p>
+        <Modal />
       </div>
     </>
   );
